@@ -1,0 +1,1 @@
+../tools-bin/lexer $* | ../tools-bin/parser | ../tools-bin/semant | ./cgen

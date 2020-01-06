@@ -1,0 +1,7 @@
+-- Here is a single line comment
+-- Here is a single line comment again (*
+(* Start of the comment
+   -- Here we have a single line comment again (or do we?). But what if we put something like (* in this line
+   Is this piece of comment still valid?
+*)
+-- Here is the last single line comment *)

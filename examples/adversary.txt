@@ -1,0 +1,653 @@
+#132
+_program
+  #22
+  _class
+    Book
+    IO
+    "book_list.cl"
+    (
+    #4
+    _attr
+      title
+      String
+      #4
+      _no_expr
+      : _no_type
+    #5
+    _attr
+      author
+      String
+      #5
+      _no_expr
+      : _no_type
+    #13
+    _method
+      initBook
+      #7
+      _formal
+        title_p
+        String
+      #7
+      _formal
+        author_p
+        String
+      Book
+      #12
+      _block
+        #9
+        _assign
+          title
+          #9
+          _object
+            title_p
+          : String
+        : String
+        #10
+        _assign
+          author
+          #10
+          _object
+            author_p
+          : String
+        : String
+        #11
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #21
+    _method
+      print
+      Book
+      #20
+      _block
+        #17
+        _dispatch
+          #17
+          _dispatch
+            #17
+            _dispatch
+              #17
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #17
+              _string
+                "title:      "
+              : String
+              )
+            : Book
+            out_string
+            (
+            #17
+            _object
+              title
+            : String
+            )
+          : Book
+          out_string
+          (
+          #17
+          _string
+            "\n"
+          : String
+          )
+        : Book
+        #18
+        _dispatch
+          #18
+          _dispatch
+            #18
+            _dispatch
+              #18
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #18
+              _string
+                "author:     "
+              : String
+              )
+            : Book
+            out_string
+            (
+            #18
+            _object
+              author
+            : String
+            )
+          : Book
+          out_string
+          (
+          #18
+          _string
+            "\n"
+          : String
+          )
+        : Book
+        #19
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #43
+  _class
+    Article
+    Book
+    "book_list.cl"
+    (
+    #25
+    _attr
+      per_title
+      String
+      #25
+      _no_expr
+      : _no_type
+    #34
+    _method
+      initArticle
+      #27
+      _formal
+        title_p
+        String
+      #27
+      _formal
+        author_p
+        String
+      #28
+      _formal
+        per_title_p
+        String
+      Article
+      #33
+      _block
+        #30
+        _dispatch
+          #30
+          _object
+            self
+          : SELF_TYPE
+          initBook
+          (
+          #30
+          _object
+            title_p
+          : String
+          #30
+          _object
+            author_p
+          : String
+          )
+        : Book
+        #31
+        _assign
+          per_title
+          #31
+          _object
+            per_title_p
+          : String
+        : String
+        #32
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #42
+    _method
+      print
+      Book
+      #41
+      _block
+        #38
+        _static_dispatch
+          #38
+          _object
+            self
+          : SELF_TYPE
+          Book
+          print
+          (
+          )
+        : Book
+        #39
+        _dispatch
+          #39
+          _dispatch
+            #39
+            _dispatch
+              #39
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #39
+              _string
+                "periodical:  "
+              : String
+              )
+            : Article
+            out_string
+            (
+            #39
+            _object
+              per_title
+            : String
+            )
+          : Article
+          out_string
+          (
+          #39
+          _string
+            "\n"
+          : String
+          )
+        : Article
+        #40
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #71
+  _class
+    BookList
+    IO
+    "book_list.cl"
+    (
+    #50
+    _method
+      isNil
+      Bool
+      #50
+      _block
+        #50
+        _dispatch
+          #50
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #50
+        _bool
+          1
+        : Bool
+      : Bool
+    #56
+    _method
+      cons
+      #52
+      _formal
+        hd
+        Book
+      Cons
+      #55
+      _let
+        new_cell
+        Cons
+        #53
+        _new
+          Cons
+        : Cons
+        #54
+        _dispatch
+          #54
+          _object
+            new_cell
+          : Cons
+          init
+          (
+          #54
+          _object
+            hd
+          : Book
+          #54
+          _object
+            self
+          : SELF_TYPE
+          )
+        : Cons
+      : Cons
+    #62
+    _method
+      car
+      Book
+      #62
+      _block
+        #62
+        _dispatch
+          #62
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #62
+        _new
+          Book
+        : Book
+      : Book
+    #68
+    _method
+      cdr
+      BookList
+      #68
+      _block
+        #68
+        _dispatch
+          #68
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #68
+        _new
+          BookList
+        : BookList
+      : BookList
+    #70
+    _method
+      print_list
+      Object
+      #70
+      _dispatch
+        #70
+        _object
+          self
+        : SELF_TYPE
+        abort
+        (
+        )
+      : Object
+    )
+  #102
+  _class
+    Cons
+    BookList
+    "book_list.cl"
+    (
+    #74
+    _attr
+      xcar
+      Book
+      #74
+      _no_expr
+      : _no_type
+    #75
+    _attr
+      xcdr
+      BookList
+      #75
+      _no_expr
+      : _no_type
+    #79
+    _method
+      isNil
+      Bool
+      #79
+      _bool
+        0
+      : Bool
+    #87
+    _method
+      init
+      #81
+      _formal
+        hd
+        Book
+      #81
+      _formal
+        tl
+        BookList
+      Cons
+      #86
+      _block
+        #83
+        _assign
+          xcar
+          #83
+          _object
+            hd
+          : Book
+        : Book
+        #84
+        _assign
+          xcdr
+          #84
+          _object
+            tl
+          : BookList
+        : BookList
+        #85
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #89
+    _method
+      car
+      Book
+      #89
+      _object
+        xcar
+      : Book
+    #91
+    _method
+      cdr
+      BookList
+      #91
+      _object
+        xcdr
+      : BookList
+    #101
+    _method
+      print_list
+      Object
+      #100
+      _block
+        #98
+        _typcase
+          #95
+          _dispatch
+            #95
+            _object
+              xcar
+            : Book
+            print
+            (
+            )
+          : Book
+          #96
+          _branch
+            dummy
+            Book
+            #96
+            _dispatch
+              #96
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #96
+              _string
+                "- dynamic type was Book -\n"
+              : String
+              )
+            : Cons
+          #97
+          _branch
+            dummy
+            Article
+            #97
+            _dispatch
+              #97
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #97
+              _string
+                "- dynamic type was Article -\n"
+              : String
+              )
+            : Cons
+        : Cons
+        #99
+        _dispatch
+          #99
+          _object
+            xcdr
+          : BookList
+          print_list
+          (
+          )
+        : Object
+      : Object
+    )
+  #108
+  _class
+    Nil
+    BookList
+    "book_list.cl"
+    (
+    #105
+    _method
+      isNil
+      Bool
+      #105
+      _bool
+        1
+      : Bool
+    #107
+    _method
+      print_list
+      Object
+      #107
+      _bool
+        1
+      : Bool
+    )
+  #132
+  _class
+    Main
+    Object
+    "book_list.cl"
+    (
+    #113
+    _attr
+      books
+      BookList
+      #113
+      _no_expr
+      : _no_type
+    #131
+    _method
+      main
+      Object
+      #130
+      _let
+        a_book
+        Book
+        #118
+        _dispatch
+          #117
+          _new
+            Book
+          : Book
+          initBook
+          (
+          #117
+          _string
+            "Compilers, Principles, Techniques, and Tools"
+          : String
+          #118
+          _string
+            "Aho, Sethi, and Ullman"
+          : String
+          )
+        : Book
+        #129
+        _let
+          an_article
+          Article
+          #123
+          _dispatch
+            #121
+            _new
+              Article
+            : Article
+            initArticle
+            (
+            #121
+            _string
+              "The Top 100 CD_ROMs"
+            : String
+            #122
+            _string
+              "Ulanoff"
+            : String
+            #123
+            _string
+              "PC Magazine"
+            : String
+            )
+          : Article
+          #128
+          _block
+            #126
+            _assign
+              books
+              #126
+              _dispatch
+                #126
+                _dispatch
+                  #126
+                  _new
+                    Nil
+                  : Nil
+                  cons
+                  (
+                  #126
+                  _object
+                    a_book
+                  : Book
+                  )
+                : Cons
+                cons
+                (
+                #126
+                _object
+                  an_article
+                : Article
+                )
+              : Cons
+            : Cons
+            #127
+            _dispatch
+              #127
+              _object
+                books
+              : BookList
+              print_list
+              (
+              )
+            : Object
+          : Object
+        : Object
+      : Object
+    )

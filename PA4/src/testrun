@@ -1,0 +1,6 @@
+./cgen0 $* > 0.s
+./cgen1 $* > 1.s
+python3 ./normalize.py
+./run 0.s > 0.out
+./run 1.s > 1.out
+diff 0.out 1.out

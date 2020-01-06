@@ -1,0 +1,45 @@
+	In example.cl you should write a correct Cool program which
+	tests as many aspects of the code generator as possible. It
+	should pass your code generator, and running spim on the
+	generated output should run the program correctly.
+
+	cgen.cc is the skeleton file for the code generator. 
+	The skeleton provides three components of the
+	code generator:
+
+		- functions to build the inheritance graph; (we supply
+		  this in case you didn't get this working for PA4)
+
+		- functions to emit global data and constants;
+		 
+		- functions to emit spim instructions; (we supply
+		  these last two to save you some tedious coding)
+
+	You should work to understand this code, and it will help you
+        write the rest of the code generator.
+
+	cgen.h is the header file for the code generator. Feel free to
+	add anything you need.
+
+	cgen_supp.cc is general support code for the code generator.
+	You can add functions as you see fit, but do not modify the 3
+	functions:
+
+		o byte_mode
+		o ascii_mode
+		o emit_string_constant
+
+	emit.h defines a bunch of macros which should come in handy
+	when you actually want to emit code. Feel free to change
+	anything here to suit your needs.
+        For this assignment, -c
+        (code generator debug) may be useful as it sets a global
+        variable cgen_debug to true (1).  If you want your code
+        generator to print debug information when the option is set,
+        write your debug code in the following format:
+
+	      if (cgen_debug)
+	      {
+		...
+	      }
+ 

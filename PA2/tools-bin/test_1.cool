@@ -1,0 +1,20 @@
+class Main{
+main():Int{0};
+};
+
+class A {
+i: Int;
+o: Object;
+b: B <- new B;
+x: SELF_TYPE;
+f(): SELF_TYPE {x};
+};
+class B inherits A {
+g(b: Bool): Object { case o of
+    o: Int => b;
+    o: Bool => o;
+    o: Object => true;
+esac  };
+sb(x:Bool):Bool{x <- (let x:Object <- x in x = x)};
+};
+

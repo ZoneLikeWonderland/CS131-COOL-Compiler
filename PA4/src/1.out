@@ -1,0 +1,12 @@
+SPIM Version 8.0 of January 8, 2010
+Copyright 1990-2010, James R. Larus.
+All Rights Reserved.
+See the file README for a full copyright notice.
+Loaded: ../tools-bin/trap.s
+The following symbols are undefined:
+main
+
+z = 23
+z = 29
+z = 33
+COOL program successfully executed

@@ -1,0 +1,58 @@
+--- ./stringtab.h	2007-09-14 13:49:37.177843000 -0500
++++ ../../../mp2-2/include/stringtab.h	2005-10-17 14:38:48.000000000 -0500
+@@ -13,6 +13,7 @@
+ #include <string.h>
+ #include "list.h"    // list template
+ #include "cool-io.h"
++#include "stringtab.handcode.h"
+ 
+ class Entry;
+ typedef Entry* Symbol;
+@@ -62,9 +63,11 @@
+ //
+ class StringEntry : public Entry {
+ public:
+-  void code_def(ostream& str, int stringclasstag);
+-  void code_ref(ostream& str);
+   StringEntry(char *s, int l, int i);
++
++#ifdef StringEntry_EXTRAS
++   StringEntry_EXTRAS
++#endif
+ };
+ 
+ class IdEntry : public Entry {
+@@ -74,9 +77,11 @@
+ 
+ class IntEntry: public Entry {
+ public:
+-  void code_def(ostream& str, int intclasstag);
+-  void code_ref(ostream& str);
+   IntEntry(char *s, int l, int i);
++
++#ifdef IntEntry_EXTRAS
++   IntEntry_EXTRAS
++#endif
+ };
+ 
+ typedef StringEntry *StringEntryP;
+@@ -128,13 +133,17 @@
+ class StrTable : public StringTable<StringEntry>
+ {
+ public: 
+-   void code_string_table(ostream&, int classtag);
++#ifdef StrTable_EXTRAS
++   StrTable_EXTRAS
++#endif
+ };
+ 
+ class IntTable : public StringTable<IntEntry>
+ {
+ public:
+-   void code_string_table(ostream&, int classtag);
++#ifdef IntTable_EXTRAS
++   IntTable_EXTRAS
++#endif
+ };
+ 
+ extern IdTable idtable;

@@ -1,0 +1,2 @@
+./cgen0 $* > temp.s
+./run temp.s

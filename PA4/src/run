@@ -1,0 +1,1 @@
+spim -exception_file ../tools-bin/trap.s -file $*

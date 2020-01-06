@@ -1,0 +1,3 @@
+./cgen0 $* > 0.s
+./cgen1 $* > 1.s
+python3 ./normalize.py
